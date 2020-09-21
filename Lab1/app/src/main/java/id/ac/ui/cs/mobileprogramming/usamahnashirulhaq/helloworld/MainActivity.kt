@@ -1,7 +1,8 @@
-package id.ac.ui.mobiledevelopment.npm1606917954.lab1
+package id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import id.ac.ui.mobileprogramming.usamahnashirulhaq.helloworld.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
