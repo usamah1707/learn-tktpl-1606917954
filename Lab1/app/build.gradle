@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "id.ac.ui.mobiledevelopment.npm1606917954.lab1"
+        applicationId 'id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld'
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
