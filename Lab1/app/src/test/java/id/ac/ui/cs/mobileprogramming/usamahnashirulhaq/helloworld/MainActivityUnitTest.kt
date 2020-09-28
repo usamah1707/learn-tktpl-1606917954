@@ -1,6 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld
 
-import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
@@ -10,20 +9,16 @@ import java.util.*
 
 class MainActivityUnitTest {
 
-    private lateinit var mainActivityClass : MainActivity
+    private lateinit var mainActivityClass: MainActivity
 
     @Before
     fun setUp() {
         mainActivityClass = MainActivity()
     }
 
-    @After
-    fun tearDown() {
-    }
-
     @Test
     fun test_getTime() {
-        val FORMAT: SimpleDateFormat = SimpleDateFormat("EEEE, MMMM d, yyyy 'at' ")
+        val FORMAT: SimpleDateFormat = SimpleDateFormat("'Its' HH:mm:ss, EEEE, d MMM yyyy")
 
         var date = FORMAT.format(Calendar.getInstance().getTime()).toString()
 

@@ -12,11 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         dateView.setText(getTime())
+        buttonCheckTime.setOnClickListener() {
+            updateTime()
+        }
     }
 
-    private val FORMAT: SimpleDateFormat = SimpleDateFormat("'Its' HH:mm, EEEE, d MMM yyyy")
+    fun updateTime() {
+        dateView.setText(getTime())
+    }
+
+    private val FORMAT: SimpleDateFormat = SimpleDateFormat("'Its' HH:mm:ss, EEEE, d MMM yyyy")
 
     fun getTime(): String? {
         return FORMAT.format(Calendar.getInstance().getTime()).toString()
+    }
+
+    fun getNama(): CharSequence? {
+        return getText(R.string.nama)
     }
 }

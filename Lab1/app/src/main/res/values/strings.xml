@@ -3,4 +3,5 @@
     <string name="nama">Usamah Nashirul Haq</string>
     <string name="hello_world">Hello world!!</string>
     <string name="textplaceholder">placeholder</string>
+    <string name="checktime">Update Time</string>
 </resources>
