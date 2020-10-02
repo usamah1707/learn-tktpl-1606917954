@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stopwatch_app">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#211D44">
+
+        <ImageView
+            android:id="@+id/ivCircle"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bgcircle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivAnchor"
+            android:layout_width="340dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icanchor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="62sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCircle"
+            app:layout_constraintVertical_bias="0.14" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:background="@drawable/btn_stop_background"
+            android:text="@string/stop"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer"
+            app:layout_constraintVertical_bias="0.663" />
+
+        <Button
+            android:id="@+id/btnStarted"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:background="@drawable/btn_start_background"
+            android:text="@string/start_now"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer"
+            app:layout_constraintVertical_bias="0.663" />
+
+        <ImageButton
+            android:id="@+id/btnexit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_exit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

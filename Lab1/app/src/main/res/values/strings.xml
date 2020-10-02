@@ -4,4 +4,9 @@
     <string name="hello_world">Hello world!!</string>
     <string name="textplaceholder">placeholder</string>
     <string name="checktime">Update Time</string>
+    <string name="title_app">StopWatch App</string>
+    <string name="app_info">Lab 3 \nUsamah Nashirul Haq</string>
+    <string name="btntext">Get Started</string>
+    <string name="start_now">Start Now</string>
+    <string name="stop">Stop</string>
 </resources>

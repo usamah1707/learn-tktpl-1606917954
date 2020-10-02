@@ -6,10 +6,6 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
 
-    buildFeatures{
-        dataBinding = true
-    }
-
     defaultConfig {
         applicationId 'id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld'
         minSdkVersion 19
@@ -17,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -25,6 +22,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures {
+        dataBinding = true
     }
 }
 

@@ -1,54 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.MainActivity">
+    android:id="@+id/activity_main">
 
-    <TextView
-        android:id="@+id/helloworld"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/nama"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#211D44">
 
-    <TextView
-        android:id="@+id/nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nama"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloworld" />
 
-    <TextView
-        android:id="@+id/dateView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/textplaceholder"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/helloworld" />
+        <ImageView
+            android:id="@+id/ivIntro"
+            android:layout_width="367dp"
+            android:layout_height="362dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icget"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonCheckTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/checktime"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nama" />
+        <TextView
+            app:layout_constraintBottom_toTopOf="@+id/btnStarted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivIntro"
+            app:layout_constraintVertical_bias="0.2"
+            android:id="@+id/tvIntroUpper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/title_app"
+            android:textColor="#FFF"
+            android:textSize="26sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvIntroLower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/app_info"
+            android:textAlignment="center"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnStarted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvIntroUpper"
+            app:layout_constraintVertical_bias="0.100000024" />
+
+        <Button
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivIntro"
+            app:layout_constraintVertical_bias="0.83"
+            android:id="@+id/btnStarted"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:text="@string/btntext"
+            android:textColor="#FFF"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            android:background="@drawable/btn_start_background" />
+
+        <ImageButton
+            android:id="@+id/btnexit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_exit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
