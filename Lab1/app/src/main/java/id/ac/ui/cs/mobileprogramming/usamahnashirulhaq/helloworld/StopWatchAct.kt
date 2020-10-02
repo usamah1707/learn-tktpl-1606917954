@@ -17,11 +17,13 @@ import id.ac.ui.mobileprogramming.usamahnashirulhaq.helloworld.databinding.Activ
 
 class StopWatchAct : AppCompatActivity() {
     private lateinit var binding: ActivityStopwatchAppBinding
+    private lateinit var ivCircle: ImageView
     private lateinit var ivAnchor: ImageView
     private lateinit var btnStart: Button
     private lateinit var btnStop: Button
     private lateinit var btnExit: ImageButton
     private lateinit var roundingAnim: Animation
+    private lateinit var introAnim: Animation
     private lateinit var btnAnim: Animation
     private lateinit var chronometer: Chronometer
 
@@ -30,6 +32,7 @@ class StopWatchAct : AppCompatActivity() {
         Log.i("StopWatchAct", "StopWatch Created")
         binding = DataBindingUtil.setContentView(this, R.layout.activity_stopwatch_app)
 
+        ivCircle = binding.ivCircle
         ivAnchor = binding.ivAnchor
         btnStart = binding.btnStarted
         btnStop = binding.btnStop
@@ -37,6 +40,7 @@ class StopWatchAct : AppCompatActivity() {
         btnExit = binding.btnexit
 
         //load animations
+        introAnim = AnimationUtils.loadAnimation(this, R.anim.image_view_anim)
         roundingAnim = AnimationUtils.loadAnimation(this, R.anim.rounding_anim)
         btnAnim = AnimationUtils.loadAnimation(this, R.anim.btn_time_anim)
 
@@ -48,6 +52,9 @@ class StopWatchAct : AppCompatActivity() {
         btnStop.setTypeface(MRegular)
 
         //implement animation
+        ivCircle.startAnimation(introAnim)
+        ivAnchor.startAnimation(introAnim)
+        chronometer.startAnimation(introAnim)
         btnStart.startAnimation(btnAnim)
         btnStop.alpha = 0F
 
