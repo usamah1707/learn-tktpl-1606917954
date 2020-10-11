@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/bottom_sheet_register"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:padding="20dp"
+        android:background="@drawable/shape_bottom_sheet_register">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="@string/register_text"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/name_register_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:background="@drawable/shape_edit_text_field"
+            android:hint="@string/hint_name_field"
+            android:inputType="textShortMessage|textCapSentences|textCapWords"
+            android:padding="12.5dp" />
+
+        <EditText
+            android:id="@+id/phone_register_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:background="@drawable/shape_edit_text_field"
+            android:hint="@string/hint_mobile_field"
+            android:inputType="phone"
+            android:padding="12.5dp" />
+
+        <EditText
+            android:id="@+id/password_register_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:autofillHints=""
+            android:background="@drawable/shape_edit_text_field"
+            android:hint="@string/hint_password_hint"
+            android:inputType="textPassword|textWebPassword"
+            android:padding="12.5dp" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/shape_register_button"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="@string/log_in_reminder"
+            android:textColor="@color/loginColor"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</layout>

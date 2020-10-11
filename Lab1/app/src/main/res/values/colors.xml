@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!--gradient transition color splash screen-->
+    <color name="purple_500">#9c27b0</color>
+    <color name="deep_purple_500">#673ab7</color>
+    <color name="indigo_500">#3f51b5</color>
+    <color name="blue_500">#2196f3</color>
+    <color name="cyan_500">#00bcd4</color>
+    <color name="light_blue_500">#03a9f4</color>
+
+    <!--gradient transition color main screen-->
+    <color name="sky_blue">#94daec</color>
+    <color name="light_sky_blue">#b8ecdf</color>
+
+    <!--login color-->
+    <color name="loginColor">#ff9900</color>
+    <color name="registerColor">#0099ff</color>
+    <color name="editTextField">#f2f2f2</color>
+
 </resources>

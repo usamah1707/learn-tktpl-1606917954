@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "963486789319",
+    "firebase_url": "https://lab-tktpl.firebaseio.com",
+    "project_id": "lab-tktpl",
+    "storage_bucket": "lab-tktpl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963486789319:android:006d50cf355e5693f098e2",
+        "android_client_info": {
+          "package_name": "id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963486789319-u2qs5l3f2n3r6342gqrn4tf3nmld0kt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzhe_pEFwR8vrai-40tRWuFzOj67zLXdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963486789319-u2qs5l3f2n3r6342gqrn4tf3nmld0kt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
