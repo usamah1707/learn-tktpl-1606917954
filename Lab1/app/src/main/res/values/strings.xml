@@ -9,11 +9,12 @@
     <string name="welcome">Welcome Back</string>
     <string name="login_text">Login to your account</string>
     <string name="register_text">Create a new account</string>
-    <string name="hint_mobile_field">Mobile</string>
+    <string name="hint_email_field">Email</string>
     <string name="hint_name_field">Name</string>
     <string name="hint_password_hint">Password</string>
     <string name="forgot_passw">Forgot your password?</string>
     <string name="sign_in_reminder">Don\'t have an account? Sign in</string>
     <string name="log_in_reminder">Already have an account? Login</string>
+    <string name="logout">Logout</string>
 
 </resources>

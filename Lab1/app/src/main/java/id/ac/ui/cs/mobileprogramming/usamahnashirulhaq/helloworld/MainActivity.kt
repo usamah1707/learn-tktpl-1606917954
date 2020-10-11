@@ -1,26 +1,34 @@
 package id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld
 
-import android.R.attr.password
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.databinding.DataBindingUtil
+import com.google.android.gms.tasks.Task
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.bottom_sheet_login.*
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var coordinatorLayout: CoordinatorLayout
     private lateinit var animationDrawable: AnimationDrawable
     private lateinit var binding: ActivityMainBinding
+    private lateinit var email: TextView
+    private lateinit var password: TextView
+    private lateinit var progressBar: ProgressBar
+    private lateinit var loginButton: Button
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         // Initialize Firebase Auth
         auth = Firebase.auth
+        email = binding.loginEmailField
+        password = binding.loginPasswordField
+        progressBar = binding.loginProgressBar
+        loginButton = binding.login
 
         coordinatorLayout = binding.coordinator
         animationDrawable = coordinatorLayout.background as AnimationDrawable
@@ -35,25 +47,58 @@ class MainActivity : AppCompatActivity() {
         animationDrawable.setEnterFadeDuration(5000)
         animationDrawable.setExitFadeDuration(2000)
 
-        //get the bottom sheet view
-        var linearLayout: LinearLayout = findViewById(R.id.bottom_sheet_login)
-
-        //init the bottom sheet view
-        val bottomSheetBehavior: BottomSheetBehavior<*> = BottomSheetBehavior.from(linearLayout)
-
-        binding.login.setOnClickListener(View.OnClickListener() {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        })
-
-        val linearlayoutRegister: LinearLayout = findViewById(R.id.bottom_sheet_register)
-        linearlayoutRegister.setBackgroundResource(R.drawable.shape_bottom_sheet_register)
-
         binding.register.setOnClickListener(View.OnClickListener {
-            CustomBottomSheetDialogFragment().show(
-                supportFragmentManager,
-                "Dialog"
-            )
+            RegisterFragment().show(supportFragmentManager,"Dialog")
         })
+
+        loginButton.setOnClickListener { View.OnClickListener{
+            Toast.makeText(this, "wuw", Toast.LENGTH_SHORT).show()
+        } }
+
+        loginButton.setOnClickListener {
+            View.OnClickListener {
+                var email: String = this.email.text.toString().trim()
+                var password: String = this.password.text.toString().trim()
+                if (TextUtils.isEmpty(email)) {
+                    this.email.setError("Nomer Telepon Tidak Boleh Kosong.")
+                    Toast.makeText(this, "Works phone", Toast.LENGTH_SHORT).show()
+                    return@OnClickListener
+                }
+                if (TextUtils.isEmpty(password)) {
+                    this.password.setError("Password Tidak Boleh Kosong.")
+                    Toast.makeText(this, "Works password", Toast.LENGTH_SHORT).show()
+                    return@OnClickListener
+                }
+                if (password.length < 6) {
+                    this.password.setError("Password Minimal 6 Karakter.")
+                    Toast.makeText(this, "Works password length", Toast.LENGTH_SHORT).show()
+                    return@OnClickListener
+                }
+                progressBar.visibility = View.VISIBLE
+
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task: Task<AuthResult> ->
+                        if (task.isSuccessful) {
+                            // Log In success, update UI with the signed-in user's information
+                            Log.d("Log In Activity", "LogInWithPhoneNumber:success")
+                            Toast.makeText(
+                                this, "Log in berhasil",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            startActivity(Intent(this, DashboardActivity::class.java))
+                            progressBar.visibility = View.INVISIBLE
+                        } else {
+                            // If Log In fails, display a message to the user.
+                            Log.w("Log In Activity", "LogInWithEmail:failure", task.exception)
+                            Toast.makeText(
+                                this, "Log in gagal.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            progressBar.visibility = View.INVISIBLE
+                        }
+                    }
+            }
+        }
 
     }
 
