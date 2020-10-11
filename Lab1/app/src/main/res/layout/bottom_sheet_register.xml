@@ -4,10 +4,10 @@
 
     <LinearLayout
         android:id="@+id/bottom_sheet_register"
-        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:background="@drawable/shape_bottom_sheet_register"
+        android:clickable="true"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
@@ -70,17 +70,6 @@
             android:text="@string/register"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:text="@string/log_in_reminder"
-            android:textColor="@color/loginColor"
-            android:textSize="20sp" />
 
         <ProgressBar
             android:id="@+id/registerProgressBar"

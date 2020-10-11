@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,20 +19,18 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="500dp">
 
                 <TextView
                     android:id="@+id/splashText"
                     android:layout_width="371dp"
                     android:layout_height="0dp"
-                    android:layout_above="@+id/login"
-                    android:layout_marginBottom="143dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="@font/amsterdam"
                     android:gravity="center|top"
                     android:text="@string/splash_title"
                     android:textColor="@android:color/white"
                     android:textSize="40sp"
-                    app:layout_constraintBottom_toTopOf="@+id/loginProgressBar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"></TextView>
@@ -41,11 +39,9 @@
                     android:id="@+id/author"
                     android:layout_width="193dp"
                     android:layout_height="53dp"
-                    android:layout_above="@+id/login"
                     android:layout_alignTop="@+id/splashText"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/raleway"
                     android:gravity="center"
                     android:text="@string/author"
@@ -55,11 +51,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/splashText"></TextView>
 
+                <ProgressBar
+                    android:id="@+id/loginProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toTopOf="@+id/login_email_field"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/author" />
+
                 <EditText
                     android:id="@+id/login_email_field"
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="148dp"
+                    android:layout_marginTop="88dp"
                     android:autofillHints=""
                     android:background="@drawable/shape_edit_text_field"
                     android:hint="@string/hint_email_field"
@@ -76,7 +83,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="16dp"
                     android:autofillHints=""
                     android:background="@drawable/shape_edit_text_field"
                     android:hint="@string/hint_password_hint"
@@ -87,7 +94,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/login_email_field" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tv_password_reminder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway"
@@ -95,37 +102,24 @@
                     android:text="@string/forgot_passw"
                     android:textColor="@android:color/white"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/login"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/login_password_field" />
 
-                <ProgressBar
-                    android:id="@+id/loginProgressBar"
-                    style="?android:attr/progressBarStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="285dp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/splashText" />
-
-                <Button
-                    android:id="@+id/login"
-                    android:layout_width="371dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="55dp"
-                    android:background="@drawable/shape_login_button"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/login"
-                    android:textAllCaps="false"
-                    android:textColor="@android:color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="58dp"
+                android:background="@drawable/shape_login_button"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
 
             <Button
                 android:id="@+id/register"
