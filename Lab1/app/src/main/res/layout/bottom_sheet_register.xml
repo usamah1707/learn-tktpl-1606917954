@@ -2,18 +2,24 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="authViewModel"
+            type="id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.auth.AuthViewModel" />
+    </data>
+
     <LinearLayout
         android:id="@+id/bottom_sheet_register"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:background="@drawable/shape_bottom_sheet_register"
-        android:clickable="true"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        app:behavior_hideable="false"
+        app:behavior_hideable="true"
         app:behavior_peekHeight="0dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
@@ -35,6 +41,7 @@
             android:autofillHints=""
             android:background="@drawable/shape_edit_text_field"
             android:hint="@string/hint_name_field"
+            android:text="@={authViewModel.name}"
             android:inputType="textShortMessage|textCapSentences|textCapWords"
             android:padding="12.5dp" />
 
@@ -46,6 +53,7 @@
             android:autofillHints=""
             android:background="@drawable/shape_edit_text_field"
             android:hint="@string/hint_email_field"
+            android:text="@={authViewModel.email}"
             android:inputType="textEmailAddress"
             android:padding="12.5dp" />
 
@@ -57,6 +65,7 @@
             android:autofillHints=""
             android:background="@drawable/shape_edit_text_field"
             android:hint="@string/hint_password_hint"
+            android:text="@={authViewModel.password}"
             android:inputType="textPassword|textWebPassword"
             android:padding="12.5dp" />
 
@@ -68,6 +77,7 @@
             android:background="@drawable/shape_register_button"
             android:fontFamily="@font/montserrat"
             android:text="@string/register"
+            android:onClick="@{authViewModel::onRegisterButtonClick}"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 

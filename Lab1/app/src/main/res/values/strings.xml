@@ -16,5 +16,11 @@
     <string name="sign_in_reminder">Don\'t have an account? Sign in</string>
     <string name="log_in_reminder">Already have an account? Login</string>
     <string name="logout">Logout</string>
+    <string name="greeting">Selamat datang %1$s di aplikasi Iinstagraman!</string>
+    <string name="textview_placeholder">Placeholder</string>
+    <string name="surprise_button_text">Get Surprise</string>
+    <string name="i_smart">Woowee!!</string>
+    <string name="wait_for_it">wait for it...</string>
+
 
 </resources>
