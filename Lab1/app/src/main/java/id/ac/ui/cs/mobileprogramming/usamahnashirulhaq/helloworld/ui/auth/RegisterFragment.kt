@@ -2,16 +2,16 @@ package id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.tasks.Task
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -25,7 +25,6 @@ import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.R
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.databinding.BottomSheetRegisterBinding
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.home.DashboardActivity
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.util.toast
-import kotlin.collections.HashMap
 
 
 /**
@@ -120,6 +119,11 @@ class RegisterFragment : BottomSheetDialogFragment(), AuthListener {
             context?.toast("success creating user with ID: " + userID)
         }
 
+        val manager: FragmentManager = activity!!.supportFragmentManager
+        val trans: FragmentTransaction = manager.beginTransaction()
+        trans.remove(this)
+        trans.commit()
+        manager.popBackStack()
         startActivity(Intent(context, DashboardActivity::class.java))
         progressBar.visibility = View.INVISIBLE
     }

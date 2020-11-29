@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
@@ -18,6 +19,7 @@ import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.R
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.databinding.FragmentProfileBinding
+import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.util.toast
 
 
 /**
@@ -25,7 +27,7 @@ import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.databinding.Fr
  * Use the [ProfileFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ProfileFragment : Fragment() {
+class ProfileFragment : Fragment(){
     private lateinit var auth: FirebaseAuth
     private lateinit var fStore: FirebaseFirestore
 
@@ -34,11 +36,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentProfileBinding>(
-            inflater, R.layout.fragment_profile, container, false)
+            inflater, R.layout.fragment_profile, container, false
+        )
         auth = Firebase.auth
         fStore = FirebaseFirestore.getInstance()
 
-        var documentReference : DocumentReference = fStore.collection("users").document(auth.currentUser!!.uid)
+        var documentReference: DocumentReference =
+            fStore.collection("users").document(auth.currentUser!!.uid)
         documentReference.addSnapshotListener(EventListener<DocumentSnapshot>
         { documentSnapshot: DocumentSnapshot?, firebaseFirestoreException: FirebaseFirestoreException? ->
             var name: String? = documentSnapshot?.getString("full_name")
@@ -48,11 +52,10 @@ class ProfileFragment : Fragment() {
 
         })
 
-        binding.surpriseButton.setOnClickListener{view:View ->
+        binding.surpriseButton.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_fragment_profile_to_fragment_suprise)
         }
 
         return binding.root
     }
-
 }

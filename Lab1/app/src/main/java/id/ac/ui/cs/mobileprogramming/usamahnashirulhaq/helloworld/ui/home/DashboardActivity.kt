@@ -1,38 +1,32 @@
 package id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.home
 
 import android.content.Intent
-import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.EventListener
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.R
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.databinding.ActivityDashboardBinding
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.auth.AuthViewModel
 import id.ac.ui.cs.mobileprogramming.usamahnashirulhaq.helloworld.ui.auth.LoginActivity
-import kotlinx.android.synthetic.main.activity_dashboard.view.*
 
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var authViewModel: AuthViewModel
     private lateinit var auth: FirebaseAuth
     private lateinit var fStore: FirebaseFirestore
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
